@@ -1,6 +1,17 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
 
+export const config = {
+  api: {
+    externalResolver: true,
+    bodyParser: false,
+  },
+  // Edge Runtime configuration
+  edge: {
+    handler: 'pages/api/parse-app',
+  },
+};
+
 const parseApp = async (req, res) => {
   const { appUrl } = req.body;
 
