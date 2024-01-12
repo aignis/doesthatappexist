@@ -1,14 +1,14 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
 
-export default async (req, res) => {
+const parseApp = async (req, res) => {
   const { appUrl } = req.body;
 
   try {
     const response = await axios.get(appUrl);
     const $ = cheerio.load(response.data);
     const scriptTagContent = $('script[type="application/ld+json"]').html();
-    
+
     if (!scriptTagContent) {
       throw new Error('Script tag with type="application/ld+json" not found');
     }
@@ -28,3 +28,5 @@ export default async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 };
+
+export default parseApp;
