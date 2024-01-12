@@ -1,8 +1,5 @@
 import axios from 'axios';
-import cheerio from 'cheerio';
-import axiosMiniprogramAdapter from 'axios-miniprogram-adapter';
-
-axios.defaults.adapter = axiosMiniprogramAdapter;
+import cheerio;
 
 export const config = {
   api: {
@@ -18,9 +15,9 @@ export const config = {
 export const runtime = 'experimental-edge';
 
 const parseApp = async (req, res) => {
-  const { appUrl } = req.body;
-
   try {
+    const { appUrl } = req.body;
+
     const response = await axios.get(appUrl);
     const $ = cheerio.load(response.data);
     const scriptTagContent = $('script[type="application/ld+json"]').html();
