@@ -1,5 +1,5 @@
 import axios from 'axios';
-import cheerio;
+import cheerio from 'cheerio';
 
 export const config = {
   api: {
