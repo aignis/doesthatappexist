@@ -11,6 +11,7 @@ export const config = {
     handler: 'pages/api/parse-app',
   },
 };
+export const runtime = 'edge';
 
 const parseApp = async (req, res) => {
   const { appUrl } = req.body;
