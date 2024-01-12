@@ -1,3 +1,3 @@
 export { default } from './parse-app';
 
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';

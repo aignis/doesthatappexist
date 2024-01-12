@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 
 const Home = () => {
   const [appUrl, setAppUrl] = useState('');
