@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+export const runtime = 'edge';
+
 const Home = () => {
   const [appUrl, setAppUrl] = useState('');
   const [appData, setAppData] = useState(null);
