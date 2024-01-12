@@ -1,5 +1,8 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
+import axiosMiniprogramAdapter from 'axios-miniprogram-adapter';
+
+axios.defaults.adapter = axiosMiniprogramAdapter;
 
 export const config = {
   api: {
@@ -11,6 +14,7 @@ export const config = {
     handler: 'pages/api/parse-app',
   },
 };
+
 export const runtime = 'experimental-edge';
 
 const parseApp = async (req, res) => {
